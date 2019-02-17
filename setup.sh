@@ -15,3 +15,5 @@ sudo mv ./percona-toolkit-3.0.5-test/bin/pt-query-digest /usr/local/bin/pt-query
 sudo chown root:root /usr/local/bin/pt-query-digest
 
 ./alp_setup.sh
+
+sudo apt-get install redis-server
