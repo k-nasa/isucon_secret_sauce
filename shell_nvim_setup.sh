@@ -8,7 +8,6 @@ sudo apt-get update
 sudo apt-get install neovim
 
 mkdir ~/.config/
-mkdir ~/.config/nvim/
 
 cd ~/
 git clone https://github.com/k-nasa/dotfile.git
