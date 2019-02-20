@@ -1,11 +1,5 @@
-# Install zsh
-sudo apt-get install zsh
-
-# Install neovim
-echo 'Install neovim'
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt-get update
-sudo apt-get install neovim
+# setup shell
+./shell_nvim_setup.sh
 
 # Install pt-query-digest
 wget https://github.com/percona/percona-toolkit/archive/3.0.5-test.tar.gz
