@@ -1,6 +1,6 @@
 # Install apl
 echo -e 'e[32mInstall alp'
-wget https://github.com/tkuchiki/alp/releases/download/v0.0.4/alp_linux_amd64.zip
+wget https://github.com/tkuchiki/alp/releases/download/v0.4.0/alp_linux_amd64.zip
 sudo apt install unzip
 unzip alp_linux_amd64.zip
 sudo mv alp_linux_amd64 alp
