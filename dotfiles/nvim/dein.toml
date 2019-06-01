@@ -1,0 +1,269 @@
+# ===========================================================
+# core plugins
+# これがないと悲しくなるやつ
+# ===========================================================
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+# 非同期シンタックスチェック
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = 'call hook#ale#load()'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+# コードの自動補完
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+hook_add = 'call hook#deoplete#load()'
+
+# ファイルツリーのやつ
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# ファイラー
+[[plugins]]
+repo = '/usr/local/opt/fzf'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+
+# =====================================================
+# lnagage server client
+# =====================================================
+[[plugins]]
+repo             = 'autozimu/LanguageClient-neovim'
+rev              = 'next'
+
+# プラグインが読み込まれる際に呼び出されるコールバック
+depends = 'deoplete.nvim'
+on_ft = ['ruby']
+build = './install.sh'
+hook_add         = 'call hook#language_client_neovim#load()'
+
+
+# なんであるのかあんまり覚えてないやつ -------------------
+# vim8でdeopleteを使うのに必要
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+on_ft = ['ruby']
+
+# vim8でdeopleteを使うのに必要
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+on_ft = ['ruby']
+
+
+[[plugins]]
+repo ='Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+# =====================================================
+# カラースキーム
+# =====================================================
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+
+[[plugins]]
+repo = 'chriskempson/base16-vim'
+
+
+# =====================================================
+# neovimをすこしいい感じにするやつ
+# TODO ここにプラグインを足すときは説明コメントをすること(忘れちゃうから)
+# =====================================================
+
+# wakatimeを使ってコーディング時間を見る
+[[plugins]]
+repo = 'wakatime/vim-wakatime'
+
+#vimの行横に+や-で差分を表示してくれる．
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+#コメントON/OFFを手軽に実行 ON/OFFはCtrl+-を二回
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+# インデントを可視化
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+# j, k移動高速化
+[[plugins]]
+repo = 'rhysd/accelerated-jk'
+
+#vimないでgitを使うためのプラグイン
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# 検索終了後にハイライトを消す
+[[plugins]]
+repo = 'romainl/vim-cool'
+hook_add = '''let g:CoolTotalMatches = 1'''
+
+# vim起動画面を変更する
+[[plugins]]
+repo = 'mhinz/vim-startify'
+hook_add = '''
+let g:startify_custom_header = [
+                  \ '                       █▀▀▄ █▀▀ █▀▀█ ▀█░█▀ ░▀░ █▀▄▀█',
+                  \ '                       █░░█ █▀▀ █░░█ ░█▄█░ ▀█▀ █░▀░█',
+                  \ '                       ▀░░▀ ▀▀▀ ▀▀▀▀ ░░▀░░ ▀▀▀ ▀░░░▀',
+                  \ '              config by nasa <https://github.com/nasa>',
+                  \ ]
+'''
+
+# 下のラインをカスタマイズするやつ
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+	let g:lightline = {
+		\ 'colorscheme': 'wombat',
+		\ 'active': {
+			\ 'left': [ ['mode', 'paste'], ['readonly', 'filepath', 'modified'] ]
+				\ },
+		\ 'component_function':{
+			\ 'filepath': 'FilePath'
+				\ }
+		\ }
+
+	function! FilePath()
+		if winwidth(0) > 90
+			return expand("%:s")
+		else
+			return expand("%:t")
+		endif
+	endfunction
+
+	" # show statusbar
+	set laststatus=2
+	" # hide --INSERT--
+	set noshowmode
+'''
+
+# =====================================================
+# 言語ごとのプラグイン
+# シンタックスハイライト、Linter等
+# TODO on_ft = '言語' を書いて適用範囲を制限すること
+# =====================================================
+
+#clangのためのプラグイン
+[[plugins]]
+repo = 'vim-jp/cpp-vim'
+
+# Dart
+[[plugins]]
+repo = 'dart-lang/dart-vim-plugin'
+on_ft = 'dart'
+hook_add  = '''
+au BufNewFile,BufRead *.dart :set filetype=dart
+'''
+
+#行末の半角スペースを可視化FixWhitespaceで削除
+repo = 'bronson/vim-trailing-whitespace'
+
+# Rust
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+hook_source = '''
+    let g:rustfmt_autosave = 1
+    let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+'''
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+on_ft='rust'
+hook_source = '''
+let g:racer_cmd = "~/.cargo/bin/racer"
+'''
+
+# ruby用 ---------
+[[plugins]]
+repo = 'fishbullet/deoplete-ruby'
+
+# endを自動で入れてくれるやる
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+# # rubyのフォーマッター
+# [[plugins]]
+# repo = 'ruby-formatter/rufo-vim'
+# hook_add = 'let g:rufo_auto_formatting = 1'
+
+#Rails用
+[[plugins]]
+repo = "tpope/vim-rails"
+[[plugins]]
+repo ="basyura/unite-rails"
+[[plugins]]
+repo = 'slim-template/vim-slim'
+
+#haskell
+[[plugins]]
+repo = 'neovimhaskell/haskell-vim'
+[[plugins]]
+repo = 'ujihisa/neco-ghc'
+
+
+#css用
+[[plugins]]
+repo = "gko/vim-coloresque"
+
+#js用
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+# CoffeeScript用
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+# jsフォーマッター
+[[plugins]]
+repo     = 'prettier/vim-prettier'
+build    = 'npm install'
+on_ft    = ['javascript', 'typescript', 'css', 'scss', 'json', 'markdown']
+hook_source = '''
+  " @formatアノテーションを持ったファイルの自動フォーマットを無効にする
+  let g:prettier#autoformat = 0
+
+  " Prettierのパースエラーをquickfixに表示しない
+  let g:prettier#quickfix_enabled = 0
+
+  autocmd BufWritePre *.js,*.ts,*.vue,*.css,*.scss,*.json,*.md PrettierAsync
+'''
+
+# vue.js用
+[[plugins]]
+repo = 'posva/vim-vue'
+#html
+[[plugins]]
+repo = 'rchaser53/insertclosetag'
+[[plugins]]
+repo =  'othree/html5.vim'
+
+#emmet-vim htmlが楽に書けるやつ
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+# Elm用
+repo = 'ElmCast/elm-vim'
+
+# typescript -----------------
+[[plugins]]
+repo = "leafgarland/typescript-vim"
+
+[[plugins]]
+repo = "peitalin/vim-jsx-typescript"
