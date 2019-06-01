@@ -7,14 +7,14 @@ sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
 sudo apt-get install neovim
 
+# Setup dev tool
+echo 'setup dev tool'
 mkdir ~/.config/
 
-cd ~/
-git clone https://github.com/k-nasa/dotfile.git
+ln -sf ./dotfile/nvim ~/.config/nvim
+ln -sf ./dotfile/.zshrc ~/
+ln -sf ./dotfile/.zprofile ~/
 
-ln -sf ~/dotfile/nvim ~/.config/nvim
-ln -sf ~/dotfile/.zprofile ~/
-
-chsh /usr/bin/zsh
+chsh -s $(which zsh)
 
 source ~/.zprofile
