@@ -1,13 +1,13 @@
 # Install apl
 echo -e 'e[32mInstall alp'
 wget https://github.com/tkuchiki/alp/releases/download/v0.4.0/alp_linux_amd64.zip
-sudo apt install unzip
 unzip alp_linux_amd64.zip
 sudo mv alp_linux_amd64 alp
 sudo mv alp /usr/local/bin/alp
+
 # パスの通っているディレクトリにalpをインストール
 sudo chown root:root /usr/local/bin/alp
-echo -e "\e[32mSuccess Install alp"
+alp --version && echo "Success Install alp"
 
 sudo touch /etc/nginx/conf.d/log_format.conf
 sudo chmod 777 /etc/nginx/conf.d/log_format.conf
@@ -27,17 +27,3 @@ sudo echo 'log_format ltsv "time:$time_local"
                 "\tapptime:$upstream_response_time"
                 "\tvhost:$host";
 access_log /var/log/nginx/access.log ltsv;' > /etc/nginx/conf.d/log_format.conf
-
-echo -e "
-
---------------------------------------------------
-\e[32mPlease add
-http {
-    ...
-    include       /etc/nginx/conf.d/*.conf;
-    ...
-}
-
-to /etc/nginx/nginx.conf
---------------------------------------------------
-"
