@@ -13,3 +13,5 @@ bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 echo 'install tools'
 ./setup_nvim.sh
 ./setup_zsh.sh
+
+./check_install.sh
