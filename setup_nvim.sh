@@ -8,4 +8,4 @@ sudo apt-get install neovim
 # sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 # sudo yum install -y neovim python{2,3}-neovim
 
-cp -r ~/isucon_secret_sauce/dotfile/nvim ~/.config/nvim
+cp -r ~/isucon_secret_sauce/dotfiles/nvim ~/.config/nvim
