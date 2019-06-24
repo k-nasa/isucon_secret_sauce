@@ -9,6 +9,7 @@ echo "install alp"
 echo "install netdata"
 bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 
+# この２つはapt-getを使ってる
 echo 'install tools'
 ./setup_nvim.sh
 ./setup_zsh.sh
