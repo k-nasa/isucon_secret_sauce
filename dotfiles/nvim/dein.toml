@@ -85,10 +85,6 @@ repo = 'chriskempson/base16-vim'
 # TODO ここにプラグインを足すときは説明コメントをすること(忘れちゃうから)
 # =====================================================
 
-# wakatimeを使ってコーディング時間を見る
-[[plugins]]
-repo = 'wakatime/vim-wakatime'
-
 #vimの行横に+や-で差分を表示してくれる．
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
