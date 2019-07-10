@@ -15,11 +15,11 @@ cd isucon_secret_sauce
 
 | tool            |                        |
 | --------------- | ---------------------- |
-| zsh             | お気に入りのシェル     |
-| neovim          | エディタ入れとく       |
 | alp             | web サーバーのログ集計 |
 | pt-query-digest | slow query 解析        |
 | htop            | グラフィカルな top     |
+| zsh             | お気に入りのシェル     |
+| neovim          | エディタ入れとく       |
 
 ### alp
 
@@ -86,3 +86,21 @@ show variables like 'slow%';
 ```
 sudo pt-query-digest /var/log/mysql/slow.log
 ```
+
+### htop
+
+top コマンドのグラフィカルなやつです。
+
+特に説明無し。
+
+以下２つはいらないかもしれないので、setup.sh の該当箇所をコメントアウトしてください。
+
+### zsh
+
+僕の普段使っている zsh plugin も一緒に入れます。 zsh のみを入れるわけじゃないです。
+
+使いづらくなったらごめん
+
+### nvim
+
+vim を入れます。 初回起動時に plugin をいろいろ入れるので時間がかかります。
