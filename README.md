@@ -32,7 +32,6 @@ https://github.com/tkuchiki/alp
 nginx 以外は公式 README を見る
 
 ```nginx.conf
-Nginx
 log_format ltsv "time:$time_local"
                 "\thost:$remote_addr"
                 "\tforwardedfor:$http_x_forwarded_for"
