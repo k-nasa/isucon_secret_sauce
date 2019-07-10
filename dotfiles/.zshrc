@@ -1,3 +1,5 @@
+source ~/.zprofile
+
 # alias setting ---------------------------------
 alias vi="nvim"
 
