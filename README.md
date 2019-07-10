@@ -13,13 +13,13 @@ cd isucon_secret_sauce
 
 何が install されるのか？
 
-| tool            |                        |
-| --------------- | ---------------------- |
-| alp             | web サーバーのログ集計 |
-| pt-query-digest | slow query 解析        |
-| htop            | グラフィカルな top     |
-| zsh             | お気に入りのシェル     |
-| neovim          | エディタ入れとく       |
+| tool                                |                        |
+| ----------------------------------- | ---------------------- |
+| [alp](#alp)                         | web サーバーのログ集計 |
+| [pt-query-digest](#pt-query-digest) | slow query 解析        |
+| [[htop](#htop)                      | グラフィカルな top     |
+| [zsh](#zsh)                         | お気に入りのシェル     |
+| [neovim](#neovim)                   | エディタ入れとく       |
 
 ### alp
 
