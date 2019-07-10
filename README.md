@@ -17,7 +17,7 @@ cd isucon_secret_sauce
 | ----------------------------------- | ---------------------- |
 | [alp](#alp)                         | web サーバーのログ集計 |
 | [pt-query-digest](#pt-query-digest) | slow query 解析        |
-| [[htop](#htop)                      | グラフィカルな top     |
+| [htop](#htop)                       | グラフィカルな top     |
 | [zsh](#zsh)                         | お気に入りのシェル     |
 | [neovim](#neovim)                   | エディタ入れとく       |
 
@@ -101,6 +101,6 @@ top コマンドのグラフィカルなやつです。
 
 使いづらくなったらごめん
 
-### nvim
+### neovim
 
 vim を入れます。 初回起動時に plugin をいろいろ入れるので時間がかかります。
