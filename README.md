@@ -23,7 +23,8 @@ cd isucon_secret_sauce
 
 ### alp
 
-こちらを入れます。
+alp は web サーバーのログプロファイラーです。
+
 https://github.com/tkuchiki/alp
 
 こんな感じの設定を nginx.conf に記述してください
@@ -60,3 +61,28 @@ access_log /var/log/nginx/access.log ltsv;'
 alp -f /var/log/nginx/access.log --aggregates "" --excludes "" --avg
 ```
 
+### pt-query-digest
+
+slow log profile
+
+まずは mysql, mariadb のスローログ出力を ON にしよう
+
+```my.conf
+[mysqld]
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 0
+```
+
+確認はこれ
+ON になってたら OK！
+
+```
+show variables like 'slow%';
+```
+
+あとは実行させるだけ！
+
+```
+sudo pt-query-digest /var/log/mysql/slow.log
+```
