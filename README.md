@@ -8,3 +8,15 @@ cd isucon_secret_sauce
 # apt-getを使用してる箇所があるので適宜yumなどに変更する
 ./setup.sh
 ```
+
+## Tools
+
+何が install されるのか？
+
+| tool            |                        |
+| --------------- | ---------------------- |
+| zsh             | お気に入りのシェル     |
+| neovim          | エディタ入れとく       |
+| alp             | web サーバーのログ集計 |
+| pt-query-digest | slow query 解析        |
+| htop            | グラフィカルな top     |
