@@ -20,3 +20,43 @@ cd isucon_secret_sauce
 | alp             | web サーバーのログ集計 |
 | pt-query-digest | slow query 解析        |
 | htop            | グラフィカルな top     |
+
+### alp
+
+こちらを入れます。
+https://github.com/tkuchiki/alp
+
+こんな感じの設定を nginx.conf に記述してください
+
+nginx 以外は公式 README を見る
+
+```nginx.conf
+Nginx
+log_format ltsv "time:$time_local"
+                "\thost:$remote_addr"
+                "\tforwardedfor:$http_x_forwarded_for"
+                "\treq:$request"
+                "\tstatus:$status"
+                "\tmethod:$request_method"
+                "\turi:$request_uri"
+                "\tsize:$body_bytes_sent"
+                "\treferer:$http_referer"
+                "\tua:$http_user_agent"
+                "\treqtime:$request_time"
+                "\tcache:$upstream_http_x_cache"
+                "\truntime:$upstream_http_x_runtime"
+                "\tapptime:$upstream_response_time"
+                "\tvhost:$host";
+
+access_log /var/log/nginx/access.log ltsv;'
+```
+
+コマンド例です。
+/user/:id のような path のときは aggregates "/user" or "/user\d+"とすると aggregates できます。
+結果を除外したいときは excludes "/user"とすればいいです。
+
+```
+# avgでソートして出力してる
+alp -f /var/log/nginx/access.log --aggregates "" --excludes "" --avg
+```
+
