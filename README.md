@@ -77,7 +77,7 @@ long_query_time = 0
 ON になってたら OK！
 
 ```
-show variables like 'slow%';
+mysql> show variables like 'slow%';
 ```
 
 あとは実行させるだけ！
