@@ -48,7 +48,7 @@ log_format ltsv "time:$time_local"
                 "\tapptime:$upstream_response_time"
                 "\tvhost:$host";
 
-access_log /var/log/nginx/access.log ltsv;'
+access_log /var/log/nginx/access.log ltsv;
 ```
 
 コマンド例です。
