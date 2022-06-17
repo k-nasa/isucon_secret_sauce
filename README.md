@@ -1,3 +1,5 @@
+https://github.com/k-nasa/isucon-magic-powder に移した
+
 ## Install
 
 ```
